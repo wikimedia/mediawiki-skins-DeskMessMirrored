@@ -14,7 +14,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Skins
  */
 class SkinDeskMessMirrored extends SkinTemplate {
-	var $skinname = 'deskmessmirrored', $stylename = 'deskmessmirrored',
+	public $skinname = 'deskmessmirrored', $stylename = 'deskmessmirrored',
 		$template = 'DeskMessMirroredTemplate', $useHeadElement = true;
 
 	/**
@@ -42,7 +42,11 @@ class SkinDeskMessMirrored extends SkinTemplate {
 		parent::setupSkinUserCss( $out );
 
 		// Add CSS via ResourceLoader
-		$out->addModuleStyles( 'skins.deskmessmirrored' );
+		$out->addModuleStyles( array(
+			'mediawiki.skinning.interface',
+			'mediawiki.skinning.content.externallinks',
+			'skins.deskmessmirrored'
+		) );
 
 		// Internet Explorer fixes (required for IE11 at least)
 		$out->addStyle( "{$wgStylePath}/DeskMessMirrored/css/ie.css", 'screen', 'IE' );
@@ -134,7 +138,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	<div id="maintop"></div>
 	<div id="wrapper">
 		<div id="content">
-			<div id="main-blog">
+			<div id="main-blog" class="mw-body">
 				<div class="post hentry mw-body-primary">
 					<?php $this->cactions(); ?>
 					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php } ?>
@@ -295,7 +299,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		foreach ( $this->getToolbox() as $key => $tbitem ) {
 			echo $this->makeListItem( $key, $tbitem );
 		}
-		wfRunHooks( 'MonoBookTemplateToolboxEnd', array( &$this ) );
+
 		wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this, true ) );
 		echo '</ul>';
 	} // toolbox()

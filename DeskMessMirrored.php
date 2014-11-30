@@ -8,7 +8,7 @@
  * @ingroup Skins
  * @author Edward Caissie <edward.caissie@gmail.com> -- original WordPress theme
  * @author Jack Phoenix <jack@countervandalism.net> -- MediaWiki port
- * @date 10 February 2014
+ * @date 30 November 2014
  * @see http://wordpress.org/themes/desk-mess-mirrored
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License version 2
  *
@@ -25,7 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['skin'][] = array(
 	'path' => __FILE__,
 	'name' => 'Desk Mess Mirrored',
-	'version' => '2.2.3',
+	'version' => '2.2.4',
 	'author' => array( '[http://edwardcaissie.com/ Edward Caissie]', 'Jack Phoenix' ),
 	'descriptionmsg' => 'deskmessmirrored-skin-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Skin:DeskMessMirrored',
@@ -37,16 +37,12 @@ $wgExtensionCredits['skin'][] = array(
 // *this* file.
 $wgValidSkinNames['deskmessmirrored'] = 'DeskMessMirrored';
 
-// Autoload the skin class, make it a valid skin, set up i18n, set up CSS & JS
-// (via ResourceLoader)
+// Autoload the skin class, set up i18n, set up CSS & JS (via ResourceLoader)
 $wgAutoloadClasses['SkinDeskMessMirrored'] = __DIR__ . '/DeskMessMirrored.skin.php';
 $wgMessagesDirs['SkinDeskMessMirrored'] = __DIR__ . '/i18n';
+
 $wgResourceModules['skins.deskmessmirrored'] = array(
 	'styles' => array(
-		// MonoBook also loads these
-		'skins/common/commonElements.css' => array( 'media' => 'screen' ),
-		'skins/common/commonContent.css' => array( 'media' => 'screen' ),
-		'skins/common/commonInterface.css' => array( 'media' => 'screen' ),
 		// Styles custom to the DeskMessMirrored skin
 		'skins/DeskMessMirrored/css/style.css' => array( 'media' => 'screen' )
 		// @todo editor-style.css? Probably not needed, I guess...
