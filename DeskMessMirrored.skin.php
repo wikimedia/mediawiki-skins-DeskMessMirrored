@@ -142,7 +142,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 				<div class="post hentry mw-body-primary">
 					<?php $this->cactions(); ?>
 					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php } ?>
-					<h1 id="firstHeading" class="firstHeading"><span dir="auto"><?php $this->html( 'title' ) ?></span></h1>
+					<h1 id="firstHeading" class="firstHeading"><?php $this->html( 'title' ) ?></h1>
 					<!-- @todo FIXME: postdata class on the next two elements is just a test, need to see how it looks like... -->
 					<div class="postdata" id="contentSub"<?php $this->html( 'userlangattributes' ) ?>><?php $this->html( 'subtitle' ) ?></div>
 					<?php if ( $this->data['undelete'] ) { ?><div class="postdata" id="contentSub2"><?php $this->html( 'undelete' ) ?></div><?php } ?>
