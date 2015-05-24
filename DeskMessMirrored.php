@@ -14,38 +14,18 @@
  *
  * To install, place the DeskMessMirrored folder (the folder containing this file!)
  * into skins/ and add this line to your wiki's LocalSettings.php:
- * require_once("$IP/skins/DeskMessMirrored/DeskMessMirrored.php");
+ * wfLoadSkin( 'DeskMessMirrored' );
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'Not a valid entry point.' );
+if ( function_exists( 'wfLoadSkin' ) ) {
+	wfLoadSkin( 'DeskMessMirrored' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['DeskMessMirrored'] = __DIR__ . '/i18n';
+	wfWarn(
+		'Deprecated PHP entry point used for DeskMessMirrored skin. Please use wfLoadSkin instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the DeskMessMirrored skin requires MediaWiki 1.25+' );
 }
-
-// Skin credits that will show up on Special:Version
-$wgExtensionCredits['skin'][] = array(
-	'path' => __FILE__,
-	'name' => 'Desk Mess Mirrored',
-	'version' => '2.2.4',
-	'author' => array( '[http://edwardcaissie.com/ Edward Caissie]', 'Jack Phoenix' ),
-	'descriptionmsg' => 'deskmessmirrored-skin-desc',
-	'url' => 'https://www.mediawiki.org/wiki/Skin:DeskMessMirrored',
-);
-
-// The first instance must be strtolower()ed so that useskin=deskmessmirrored works and
-// so that it does *not* force an initial capital (i.e. we do NOT want
-// useskin=Deskmessmirrored) and the second instance is used to determine the name of
-// *this* file.
-$wgValidSkinNames['deskmessmirrored'] = 'DeskMessMirrored';
-
-// Autoload the skin class, set up i18n, set up CSS & JS (via ResourceLoader)
-$wgAutoloadClasses['SkinDeskMessMirrored'] = __DIR__ . '/DeskMessMirrored.skin.php';
-$wgMessagesDirs['SkinDeskMessMirrored'] = __DIR__ . '/i18n';
-
-$wgResourceModules['skins.deskmessmirrored'] = array(
-	'styles' => array(
-		// Styles custom to the DeskMessMirrored skin
-		'skins/DeskMessMirrored/css/style.css' => array( 'media' => 'screen' )
-		// @todo editor-style.css? Probably not needed, I guess...
-	),
-	'position' => 'top'
-);

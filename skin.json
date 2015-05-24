@@ -1,0 +1,32 @@
+{
+	"name": "Desk Mess Mirrored",
+	"version": "2.2.5",
+	"author": [
+		"[http://edwardcaissie.com/ Edward Caissie]",
+		"Jack Phoenix"
+	],
+	"url": "https://www.mediawiki.org/wiki/Skin:DeskMessMirrored",
+	"descriptionmsg": "deskmessmirrored-skin-desc",
+	"type": "skin",
+	"ValidSkinNames": {
+		"deskmessmirrored": "DeskMessMirrored"
+	},
+	"MessagesDirs": {
+		"SkinDeskMessMirrored": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SkinDeskMessMirrored": "DeskMessMirrored.skin.php"
+	},
+	"ResourceModules": {
+		"skins.deskmessmirrored": {
+			"styles": {
+				"skins/DeskMessMirrored/css/style.css": {
+					"media": "screen"
+				}
+			},
+			"position": "top"
+		}
+	}
+}
