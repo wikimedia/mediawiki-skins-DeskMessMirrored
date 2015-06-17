@@ -300,7 +300,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 			echo $this->makeListItem( $key, $tbitem );
 		}
 
-		wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this, true ) );
+		Hooks::run( 'SkinTemplateToolboxEnd', array( &$this, true ) );
 		echo '</ul>';
 	} // toolbox()
 
