@@ -1,12 +1,15 @@
 <?php
 /**
- * Desk Mess Mirrored skin main PHP file.
+ * Desk Mess Mirrored skin -- marble desktop covered with a mix of old and new
+ * items, such as some vintage papers, a stainless steel pen, and, a hot cup of
+ * coffee!
  *
  * @file
+ * @author Edward Caissie <edward.caissie@gmail.com> -- original WordPress theme
+ * @author Jack Phoenix <jack@countervandalism.net> -- MediaWiki port
+ * @see http://wordpress.org/themes/desk-mess-mirrored
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License version 2
  */
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( -1 );
-}
 
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
@@ -22,8 +25,6 @@ class SkinDeskMessMirrored extends SkinTemplate {
 	 * @param OutputPage $out
 	 */
 	public function initPage( OutputPage $out ) {
-		wfProfileIn( __METHOD__ );
-
 		parent::initPage( $out );
 
 		global $wgHooks;
@@ -32,8 +33,6 @@ class SkinDeskMessMirrored extends SkinTemplate {
 			$bodyAttrs['class'] .= ' home blog custom-background';
 			return true;
 		};
-
-		wfProfileOut( __METHOD__ );
 	}
 
 	function setupSkinUserCss( OutputPage $out ) {
@@ -65,10 +64,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	 * outputs a formatted page.
 	 */
 	public function execute() {
-		global $wgContLang, $wgSitename, $wgLangToCentralMap;
-
-		$hubURL = !empty( $wgLangToCentralMap[$wgContLang->getCode()] ) ?
-			$wgLangToCentralMap[$wgContLang->getCode()] : 'http://www.shoutwiki.com/';
+		global $wgContLang, $wgSitename;
 
 		$this->html( 'headelement' );
 ?><div id="mainwrap">
@@ -367,8 +363,6 @@ class DeskMessMirroredSkinNavigationService {
 	 * @return Array
 	 */
 	public function parseMessage( $messageName, $maxChildrenAtLevel = array(), $duration, $forContent = false ) {
-		wfProfileIn( __METHOD__ );
-
 		global $wgLang, $wgContLang, $wgMemc;
 
 		$this->forContent = $forContent;
@@ -393,7 +387,6 @@ class DeskMessMirroredSkinNavigationService {
 			}
 		}
 
-		wfProfileOut( __METHOD__ );
 		return $nodes;
 	}
 
@@ -405,8 +398,6 @@ class DeskMessMirroredSkinNavigationService {
 	 * @return Array
 	 */
 	private function parseLines( $lines, $maxChildrenAtLevel = array() ) {
-		wfProfileIn( __METHOD__ );
-
 		$nodes = array();
 
 		if ( is_array( $lines ) && count( $lines ) > 0 ) {
@@ -463,7 +454,6 @@ class DeskMessMirroredSkinNavigationService {
 			}
 		}
 
-		wfProfileOut( __METHOD__ );
 		return $nodes;
 	}
 
@@ -472,8 +462,6 @@ class DeskMessMirroredSkinNavigationService {
 	 * @return Array
 	 */
 	private function parseOneLine( $line ) {
-		wfProfileIn( __METHOD__ );
-
 		// trim spaces and asterisks from line and then split it to maximum two chunks
 		$lineArr = explode( '|', trim( $line, '* ' ), 2 );
 
@@ -513,7 +501,6 @@ class DeskMessMirroredSkinNavigationService {
 			}
 		}
 
-		wfProfileOut( __METHOD__ );
 		return array(
 			'original' => $lineArr[0],
 			'text' => $text,
