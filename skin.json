@@ -22,10 +22,14 @@
 		"DeskMessMirroredTemplate": "DeskMessMirrored.skin.php",
 		"DeskMessMirroredSkinNavigationService": "DeskMessMirrored.skin.php"
 	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "DeskMessMirrored"
+	},
 	"ResourceModules": {
 		"skins.deskmessmirrored": {
 			"styles": {
-				"skins/DeskMessMirrored/css/style.css": {
+				"css/style.css": {
 					"media": "screen"
 				}
 			},
