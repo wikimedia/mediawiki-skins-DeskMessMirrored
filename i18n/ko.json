@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Jerrykim306"
 		]
 	},
-	"deskmessmirrored-navigation": "* 에스프레소\n\n** 단계 2\n\n*** 단계 3\n\n* 커피\n\n** 단계 2\n\n*** 단계 3\n\n* 차\n\n** 단계 2\n\n*** 단계 3\n\n* 케이크\n\n** 단계 2\n\n*** 단계 3\n\n* 쿠키\n\n** 단계 2\n\n*** 단계 3"
+	"deskmessmirrored-navigation": "* 에스프레소\n\n** 2단계\n\n*** 3단계\n\n* 커피\n\n** 2단계\n\n*** 3단계\n\n* 차\n\n** 2단계\n\n*** 3단계\n\n* 케이크\n\n** 2단계\n\n*** 3단계\n\n* 쿠키\n\n** 2단계\n\n*** 3단계"
 }
