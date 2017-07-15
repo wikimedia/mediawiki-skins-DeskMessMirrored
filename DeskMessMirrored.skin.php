@@ -134,7 +134,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	<div id="maintop"></div>
 	<div id="wrapper">
 		<div id="content">
-			<div id="main-blog" class="mw-body">
+			<div id="main-blog" class="mw-body-content">
 				<div class="post hentry mw-body-primary">
 					<?php $this->cactions(); ?>
 					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php } ?>
