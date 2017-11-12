@@ -6,7 +6,7 @@
  *
  * @file
  * @author Edward Caissie <edward.caissie@gmail.com> -- original WordPress theme
- * @author Jack Phoenix <jack@countervandalism.net> -- MediaWiki port
+ * @author Jack Phoenix -- MediaWiki port
  * @see http://wordpress.org/themes/desk-mess-mirrored
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License version 2
  */
