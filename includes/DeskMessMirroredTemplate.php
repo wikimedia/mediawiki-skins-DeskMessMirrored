@@ -254,8 +254,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		foreach ( $this->getToolbox() as $key => $tbitem ) {
 			echo $this->makeListItem( $key, $tbitem );
 		}
-
-		Hooks::run( 'SkinTemplateToolboxEnd', array( &$this, true ) );
+		// Avoid PHP 7.1 warning of passing $this by reference
+		$template = $this;
+		Hooks::run( 'SkinTemplateToolboxEnd', array( &$template, true ) );
 		echo '</ul>';
 	} // toolbox()
 
