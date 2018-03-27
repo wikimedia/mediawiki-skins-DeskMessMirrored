@@ -7,7 +7,7 @@
  */
 class SkinDeskMessMirrored extends SkinTemplate {
 	public $skinname = 'deskmessmirrored', $stylename = 'deskmessmirrored',
-		$template = 'DeskMessMirroredTemplate', $useHeadElement = true;
+		$template = 'DeskMessMirroredTemplate';
 
 	/**
 	 * Initializes Desk Mess Mirrored
