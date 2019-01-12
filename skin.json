@@ -1,6 +1,6 @@
 {
 	"name": "Desk Mess Mirrored",
-	"version": "3.3.1",
+	"version": "3.4.0",
 	"author": [
 		"[http://edwardcaissie.com/ Edward Caissie]",
 		"Jack Phoenix",
@@ -10,6 +10,9 @@
 	"descriptionmsg": "deskmessmirrored-skin-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.32.0"
+	},
 	"ValidSkinNames": {
 		"deskmessmirrored": "DeskMessMirrored"
 	},

@@ -10,18 +10,14 @@ class SkinDeskMessMirrored extends SkinTemplate {
 		$template = 'DeskMessMirroredTemplate';
 
 	/**
-	 * Initializes Desk Mess Mirrored
+	 * Add some required CSS classes to the <body> element for pages rendered with
+	 * this skin.
+	 *
 	 * @param OutputPage $out
+	 * @param array $bodyAttrs Pre-existing attributes of the <body> tag
 	 */
-	public function initPage( OutputPage $out ) {
-		parent::initPage( $out );
-
-		global $wgHooks;
-		// Add some required classes to the <body> element
-		$wgHooks['OutputPageBodyAttributes'][] = function( $out, $sk, &$bodyAttrs ) {
-			$bodyAttrs['class'] .= ' home blog custom-background';
-			return true;
-		};
+	public function addToBodyAttributes( $out, &$bodyAttrs ) {
+		$bodyAttrs['class'] .= ' home blog custom-background';
 	}
 
 	function setupSkinUserCss( OutputPage $out ) {
@@ -30,11 +26,11 @@ class SkinDeskMessMirrored extends SkinTemplate {
 		parent::setupSkinUserCss( $out );
 
 		// Add CSS via ResourceLoader
-		$out->addModuleStyles( array(
+		$out->addModuleStyles( [
 			'mediawiki.skinning.interface',
 			'mediawiki.skinning.content.externallinks',
 			'skins.deskmessmirrored'
-		) );
+		] );
 
 		// Internet Explorer fixes (required for IE11 at least)
 		$out->addStyle( "{$wgStylePath}/DeskMessMirrored/css/ie.css", 'screen', 'IE' );

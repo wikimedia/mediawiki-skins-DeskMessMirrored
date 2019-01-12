@@ -44,7 +44,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 					$service = new DeskMessMirroredSkinNavigationService();
 					$menuNodes = $service->parseMessage(
 						'deskmessmirrored-navigation',
-						array( 10, 10, 10, 10, 10, 10 ),
+						[ 10, 10, 10, 10, 10, 10 ],
 						60 * 60 * 3 // 3 hours
 					);
 
@@ -215,9 +215,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 									<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 									<label class="screen-reader-text" for="searchInput"><?php $this->msg( 'search' ) ?></label>
 									<?php
-										echo $this->makeSearchInput( array( 'id' => 'searchInput' ) );
-										#$fullText = $this->makeSearchButton( 'fulltext', array( 'id' => 'mw-searchButton', 'class' => 'searchButton' ) );
-										$goButton = $this->makeSearchButton( 'go', array( 'id' => 'searchGoButton', 'class' => 'searchButton' ) );
+										echo $this->makeSearchInput( [ 'id' => 'searchInput' ] );
+										#$fullText = $this->makeSearchButton( 'fulltext', [ 'id' => 'mw-searchButton', 'class' => 'searchButton' ] );
+										$goButton = $this->makeSearchButton( 'go', [ 'id' => 'searchGoButton', 'class' => 'searchButton' ] );
 										// Fulltext search button removed, it looks bad together w/ the
 										// "Go" button since they both just don't fit in there
 										#echo $fullText . "\n";
@@ -256,7 +256,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		}
 		// Avoid PHP 7.1 warning of passing $this by reference
 		$template = $this;
-		Hooks::run( 'SkinTemplateToolboxEnd', array( &$template, true ) );
+		Hooks::run( 'SkinTemplateToolboxEnd', [ &$template, true ] );
 		echo '</ul>';
 	} // toolbox()
 
@@ -279,11 +279,11 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	 * @param $cont array|string
 	 */
 	function customBox( $bar, $cont ) {
-		$portletAttribs = array(
+		$portletAttribs = [
 			'class' => 'generated-sidebar widget',
-			'id' => Sanitizer::escapeId( "p-$bar" ),
+			'id' => Sanitizer::escapeIdForAttribute( "p-$bar" ),
 			'role' => 'navigation'
-		);
+		];
 		$msg = wfMessage( $bar );
 		echo '	' . Html::openElement( 'li', $portletAttribs );
 ?>
