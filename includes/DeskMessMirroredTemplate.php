@@ -23,7 +23,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	 * outputs a formatted page.
 	 */
 	public function execute() {
-		global $wgContLang, $wgSitename;
+		global $wgSitename;
 
 		$this->html( 'headelement' );
 ?><div id="mainwrap">
