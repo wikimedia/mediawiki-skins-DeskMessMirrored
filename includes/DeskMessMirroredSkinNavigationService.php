@@ -7,7 +7,7 @@
  */
 class DeskMessMirroredSkinNavigationService {
 
-	const version = '0.01';
+	private const VERSION = '0.01';
 
 	/**
 	 * Parses a system message by exploding along newlines.
@@ -28,7 +28,7 @@ class DeskMessMirroredSkinNavigationService {
 		$useCache = $wgLang->getCode() == $contLang->getCode();
 
 		if ( $useCache || $this->forContent ) {
-			$cacheKey = $wgMemc->makeKey( $messageName, self::version );
+			$cacheKey = $wgMemc->makeKey( $messageName, self::VERSION );
 			$nodes = $wgMemc->get( $cacheKey );
 		}
 
