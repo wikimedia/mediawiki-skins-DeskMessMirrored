@@ -14,13 +14,16 @@ class SkinDeskMessMirrored extends SkinTemplate {
 	 * this skin.
 	 *
 	 * @param OutputPage $out
-	 * @param array $bodyAttrs Pre-existing attributes of the <body> tag
+	 * @param array &$bodyAttrs Pre-existing attributes of the <body> tag
 	 */
 	public function addToBodyAttributes( $out, &$bodyAttrs ) {
 		$bodyAttrs['class'] .= ' home blog custom-background';
 	}
 
-	function setupSkinUserCss( OutputPage $out ) {
+	/**
+	 * @param OutputPage $out
+	 */
+	public function setupSkinUserCss( OutputPage $out ) {
 		global $wgStylePath;
 
 		parent::setupSkinUserCss( $out );
