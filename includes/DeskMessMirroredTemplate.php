@@ -8,7 +8,7 @@
  * @author Edward Caissie <edward.caissie@gmail.com> -- original WordPress theme
  * @author Jack Phoenix -- MediaWiki port
  * @see http://wordpress.org/themes/desk-mess-mirrored
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License version 2
+ * @license GPL-2.0-only
  */
 
 /**
@@ -176,7 +176,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	/*************************************************************************************************/
 
 	/**
-	 * @param $sidebar array
+	 * @param array $sidebar
 	 */
 	protected function renderPortals( $sidebar ) {
 		if ( !isset( $sidebar['SEARCH'] ) ) {
@@ -209,7 +209,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	/**
 	 * Outputs the search box.
 	 */
-	function searchBox() {
+	private function searchBox() {
 ?>
 							<li id="search-3" class="widget widget_search"><h2 class="widgettitle"></h2>
 							<form role="search" method="get" id="searchform" class="searchform" action="<?php $this->text( 'wgScript' ) ?>">
@@ -218,11 +218,11 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 									<label class="screen-reader-text" for="searchInput"><?php $this->msg( 'search' ) ?></label>
 									<?php
 										echo $this->makeSearchInput( [ 'id' => 'searchInput' ] );
-										#$fullText = $this->makeSearchButton( 'fulltext', [ 'id' => 'mw-searchButton', 'class' => 'searchButton' ] );
+										# $fullText = $this->makeSearchButton( 'fulltext', [ 'id' => 'mw-searchButton', 'class' => 'searchButton' ] );
 										$goButton = $this->makeSearchButton( 'go', [ 'id' => 'searchGoButton', 'class' => 'searchButton' ] );
 										// Fulltext search button removed, it looks bad together w/ the
 										// "Go" button since they both just don't fit in there
-										#echo $fullText . "\n";
+										# echo $fullText . "\n";
 										echo $goButton . "\n";
 									?>&#160;
 								</div>
@@ -234,7 +234,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	/**
 	 * Outputs the content actions bar.
 	 */
-	function cactions() {
+	private function cactions() {
 ?>
 								<div id="p-cactions" class="noprint">
 <?php
@@ -247,7 +247,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	/**
 	 * Outputs the toolbox.
 	 */
-	function toolbox() {
+	private function toolbox() {
 ?>
 							<li id="p-toolbox" class="widget">
 								<h2 class="widgettitle"><?php $this->msg( 'toolbox' ) ?></h2>
@@ -262,7 +262,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		echo '</ul>';
 	} // toolbox()
 
-	function languageBox() {
+	private function languageBox() {
 		if ( $this->data['language_urls'] ) {
 ?>
 							<li class="widget" id="p-languages">
@@ -277,10 +277,10 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	} // languageBox()
 
 	/**
-	 * @param $bar string
-	 * @param $cont array|string
+	 * @param string $bar
+	 * @param array|string $cont
 	 */
-	function customBox( $bar, $cont ) {
+	private function customBox( $bar, $cont ) {
 		$portletAttribs = [
 			'class' => 'generated-sidebar widget',
 			'id' => Sanitizer::escapeIdForAttribute( "p-$bar" ),
@@ -290,7 +290,8 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		echo '	' . Html::openElement( 'li', $portletAttribs );
 ?>
 		<h2 class="widget-title"><?php echo htmlspecialchars( $msg->exists() ? $msg->text() : $bar ); ?></h2>
-<?php	if ( is_array( $cont ) ) {
+<?php
+		if ( is_array( $cont ) ) {
 			echo '<ul>';
 			foreach ( $cont as $key => $val ) {
 				echo $this->makeListItem( $key, $val );
