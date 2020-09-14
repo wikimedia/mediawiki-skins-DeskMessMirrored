@@ -95,13 +95,23 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		<div id="content">
 			<div id="main-blog" class="mw-body-content">
 				<div class="post hentry mw-body-primary">
-					<?php $this->cactions(); ?>
-					<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php } ?>
+					<?php
+					$this->cactions();
+					if ( $this->data['sitenotice'] ) {
+						?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php
+					}
+					?>
 					<h1 id="firstHeading" class="firstHeading"><?php $this->html( 'title' ) ?></h1>
 					<!-- @todo FIXME: postdata class on the next two elements is just a test, need to see how it looks like... -->
 					<div class="postdata" id="contentSub"<?php $this->html( 'userlangattributes' ) ?>><?php $this->html( 'subtitle' ) ?></div>
-					<?php if ( $this->data['undelete'] ) { ?><div class="postdata" id="contentSub2"><?php $this->html( 'undelete' ) ?></div><?php } ?>
-					<?php if ( $this->data['newtalk'] ) { ?><div class="usermessage"><?php $this->html( 'newtalk' ) ?></div><?php } ?>
+					<?php
+					if ( $this->data['undelete'] ) {
+						?><div class="postdata" id="contentSub2"><?php $this->html( 'undelete' ) ?></div><?php
+					}
+					if ( $this->data['newtalk'] ) {
+						?><div class="usermessage"><?php $this->html( 'newtalk' ) ?></div><?php
+					}
+					?>
 					<div id="jump-to-nav"></div>
 					<a class="mw-jump-link" href="#top-navigation-menu"><?php $this->msg( 'deskmessmirrored-jump-to-navigation' ) ?></a>
 					<a class="mw-jump-link" href="#searchInput"><?php $this->msg( 'deskmessmirrored-jump-to-search' ) ?></a>
@@ -114,7 +124,11 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 					?>
 					<!-- end content -->
 					<div class="clear"><!-- For inserted media at the end of the post --></div>
-					<?php if ( $this->data['dataAfterContent'] ) { $this->html( 'dataAfterContent' ); } ?>
+					<?php
+					if ( $this->data['dataAfterContent'] ) {
+						$this->html( 'dataAfterContent' );
+					}
+					?>
 				</div><!-- .post #post-ID -->
 
 				<div id="nav-global" class="navigation">
@@ -154,9 +168,11 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		<div id="bottom-container">
 			<p>
 				<?php
-				if ( isset( $this->data['copyright'] ) && $this->data['copyright'] ) :
+				if ( isset( $this->data['copyright'] ) && $this->data['copyright'] ) {
 				?>
-				<span id="dmm-dynamic-copyright"><?php echo $this->data['copyright'] ?></span><!-- #bns-dynamic-copyright --><br /><?php endif; ?><span id="dmm-theme-version" class="noprint"><?php
+				<span id="dmm-dynamic-copyright"><?php echo $this->data['copyright'] ?></span><!-- #bns-dynamic-copyright --><br /><?php
+				}
+				?><span id="dmm-theme-version" class="noprint"><?php
 				foreach ( $this->getFooterIcons( 'nocopyright' ) as $blockName => $footerIcons ) {
 					foreach ( $footerIcons as $icon ) {
 						echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' );

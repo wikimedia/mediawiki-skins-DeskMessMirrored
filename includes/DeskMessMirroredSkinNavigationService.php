@@ -19,7 +19,7 @@ class DeskMessMirroredSkinNavigationService {
 	 *								the wiki's content language (true) or not?
 	 * @return array
 	 */
-	public function parseMessage( $messageName, $maxChildrenAtLevel = [], $duration, $forContent = false ) {
+	public function parseMessage( $messageName, $maxChildrenAtLevel, $duration, $forContent = false ) {
 		global $wgLang, $wgMemc;
 
 		$this->forContent = $forContent;
