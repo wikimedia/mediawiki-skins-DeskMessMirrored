@@ -101,6 +101,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 						?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php
 					}
 					?>
+					<?php echo $this->getIndicators(); ?>
 					<h1 id="firstHeading" class="firstHeading"><?php $this->html( 'title' ) ?></h1>
 					<!-- @todo FIXME: postdata class on the next two elements is just a test, need to see how it looks like... -->
 					<div class="postdata" id="contentSub"<?php $this->html( 'userlangattributes' ) ?>><?php $this->html( 'subtitle' ) ?></div>
