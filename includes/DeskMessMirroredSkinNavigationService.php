@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * A fork of Oasis' NavigationService with some changes.
  * Namely the name was changed and "magic word" handling was removed from
@@ -20,16 +22,18 @@ class DeskMessMirroredSkinNavigationService {
 	 * @return array
 	 */
 	public function parseMessage( $messageName, $maxChildrenAtLevel, $duration, $forContent = false ) {
-		global $wgLang, $wgMemc;
+		global $wgLang;
 
 		$this->forContent = $forContent;
 
-		$contLang = MediaWiki\MediaWikiServices::getInstance()->getContentLanguage();
+		$services = MediaWikiServices::getInstance();
+		$contLang = $services->getContentLanguage();
+		$cache = $services->getMainWANObjectCache();
 		$useCache = $wgLang->getCode() == $contLang->getCode();
 
 		if ( $useCache || $this->forContent ) {
-			$cacheKey = $wgMemc->makeKey( $messageName, self::VERSION );
-			$nodes = $wgMemc->get( $cacheKey );
+			$cacheKey = $cache->makeKey( $messageName, self::VERSION );
+			$nodes = $cache->get( $cacheKey );
 		}
 
 		if ( empty( $nodes ) ) {
@@ -41,7 +45,7 @@ class DeskMessMirroredSkinNavigationService {
 			$nodes = $this->parseLines( $lines, $maxChildrenAtLevel );
 
 			if ( $useCache || $this->forContent ) {
-				$wgMemc->set( $cacheKey, $nodes, $duration );
+				$cache->set( $cacheKey, $nodes, $duration );
 			}
 		}
 
