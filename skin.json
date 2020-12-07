@@ -26,6 +26,9 @@
 		"DeskMessMirroredTemplate": "includes/DeskMessMirroredTemplate.php",
 		"DeskMessMirroredSkinNavigationService": "includes/DeskMessMirroredSkinNavigationService.php"
 	},
+	"Hooks": {
+		"OutputPageBodyAttributes": "SkinDeskMessMirrored::onOutputPageBodyAttributes"
+	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteSkinPath": "DeskMessMirrored"

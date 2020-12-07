@@ -14,10 +14,13 @@ class SkinDeskMessMirrored extends SkinTemplate {
 	 * this skin.
 	 *
 	 * @param OutputPage $out
+	 * @param Skin $sk
 	 * @param array &$bodyAttrs Pre-existing attributes of the <body> tag
 	 */
-	public function addToBodyAttributes( $out, &$bodyAttrs ) {
-		$bodyAttrs['class'] .= ' home blog custom-background';
+	public static function onOutputPageBodyAttributes( $out, $sk, &$bodyAttrs ) {
+		if ( get_class( $sk ) === 'SkinDeskMessMirrored' ) {
+			$bodyAttrs['class'] .= ' home blog custom-background';
+		}
 	}
 
 	/**
