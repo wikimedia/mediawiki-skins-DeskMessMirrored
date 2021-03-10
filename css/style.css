@@ -363,7 +363,6 @@ td {
 }
 
 #headerleft {
-	/* @embed */
 	background: url( ../images/left-pile.png ) no-repeat;
 	float: left;
 	height: 463px;
@@ -375,7 +374,6 @@ td {
 }
 
 #logo {
-	/* @embed */
 	background: url( ../images/logo-bg.png ) no-repeat;
 	float: left;
 	height: 227px;
@@ -405,7 +403,6 @@ td {
 }
 
 #cup {
-	/* @embed */
 	background: url( ../images/cup3m.png ) no-repeat;
 	float: right;
 	height: 395px;
@@ -541,7 +538,6 @@ ul.nav-menu ul.children li {
 
 /* === MAIN AREA == */
 #wrapper {
-	/* @embed */
 	background: url( ../images/main-page-middle.png ) repeat-y;
 	margin: 0 auto;
 	position: relative;
@@ -1528,7 +1524,6 @@ input.search-submit {
 
 /* === FOOTER === */
 #bottom {
-	/* @embed */
 	background: url( ../images/footer.png ) no-repeat;
 	height: 100px;
 }
@@ -1540,7 +1535,6 @@ input.search-submit {
 }
 
 #bottom-extended {
-	/* @embed */
 	background: url( ../images/main-page-middle.png ) repeat-y;
 	left: -2px;
 	margin: 0 auto;
@@ -1558,7 +1552,6 @@ input.search-submit {
 /* === Miscellaneous Plugin Styles - I removed all of these as we don't need 'em (ashley on 10 February 2013) === */
 /* Custom (sic) background styles, which apparently are always inline on WordPress */
 body.custom-background {
-	/* @embed */
 	background-image: url( ../images/marble-bg.png );
 	background-repeat: repeat;
 	background-position: top left;
