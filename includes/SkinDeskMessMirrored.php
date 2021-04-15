@@ -26,17 +26,8 @@ class SkinDeskMessMirrored extends SkinTemplate {
 	/**
 	 * @param OutputPage $out
 	 */
-	public function setupSkinUserCss( OutputPage $out ) {
+	public function initPage( OutputPage $out ) {
 		global $wgStylePath;
-
-		parent::setupSkinUserCss( $out );
-
-		// Add CSS via ResourceLoader
-		$out->addModuleStyles( [
-			'mediawiki.skinning.interface',
-			'mediawiki.skinning.content.externallinks',
-			'skins.deskmessmirrored'
-		] );
 
 		// Internet Explorer fixes (required for IE11 at least)
 		$out->addStyle( "{$wgStylePath}/DeskMessMirrored/css/ie.css", 'screen', 'IE' );

@@ -11,10 +11,21 @@
 	"license-name": "GPL-2.0-only",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.35.0"
 	},
 	"ValidSkinNames": {
-		"deskmessmirrored": "DeskMessMirrored"
+		"deskmessmirrored": {
+			"displayname": "DeskMessMirrored",
+			"class": "SkinDeskMessMirrored",
+			"args": [ {
+				"name": "deskmessmirrored",
+				"styles": [
+					"mediawiki.skinning.interface",
+					"mediawiki.skinning.content.externallinks",
+					"skins.deskmessmirrored"
+				]
+			} ]
+		}
 	},
 	"MessagesDirs": {
 		"SkinDeskMessMirrored": [
