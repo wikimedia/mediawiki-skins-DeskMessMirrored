@@ -270,7 +270,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 								<h2 class="widgettitle"><?php $this->msg( 'toolbox' ) ?></h2>
 								<ul>
 <?php
-		foreach ( $this->getToolbox() as $key => $tbitem ) {
+		foreach ( $this->data['sidebar']['TOOLBOX'] as $key => $tbitem ) {
 			echo $this->makeListItem( $key, $tbitem );
 		}
 		// Avoid PHP 7.1 warning of passing $this by reference
