@@ -174,7 +174,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 				<span id="dmm-dynamic-copyright"><?php echo $this->data['copyright'] ?></span><!-- #bns-dynamic-copyright --><br /><?php
 				}
 				?><span id="dmm-theme-version" class="noprint"><?php
-				foreach ( $this->getFooterIcons( 'nocopyright' ) as $blockName => $footerIcons ) {
+				$validFooterIcons = $this->get( 'footericons' );
+				unset( $validFooterIcons['copyright'] );
+				foreach ( $validFooterIcons as $blockName => $footerIcons ) {
 					foreach ( $footerIcons as $icon ) {
 						echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' );
 					}
