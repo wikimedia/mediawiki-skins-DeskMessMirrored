@@ -30,7 +30,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	<div id="header-container">
 		<div id="header"><!-- header -->
 			<div id="headerleft"></div>
-			<div id="logo">
+			<div id="logo" role="banner">
 				<h2 id="site-title">
 					<a href="<?php echo $this->data['nav_urls']['mainpage']['href'] ?>" title="<?php echo Linker::titleAttrib( 'p-logo', 'withaccess' ) ?>" accesskey="<?php echo Linker::accesskey( 'p-logo' ) ?>"><?php echo $wgSitename ?></a>
 				</h2>
@@ -92,7 +92,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	</div><!-- #header-container -->
 	<div id="maintop"></div>
 	<div id="wrapper">
-		<div id="content">
+		<div id="content" role="main">
 			<div id="main-blog" class="mw-body-content">
 				<div class="post hentry mw-body-primary">
 					<?php
@@ -144,7 +144,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 					<div id="subcolumn">
 						<ul>
 							<?php $this->renderPortals( $this->data['sidebar'] ); ?>
-							<li class="widget" id="p-personal">
+							<li class="widget" id="p-personal" role="navigation">
 								<h2 class="widgettitle"><?php $this->msg( 'personaltools' ) ?></h2>
 								<ul>
 								<?php
@@ -165,7 +165,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	</div><!-- end wrapper -->
 
 	<div id="bottom"></div>
-	<div id="bottom-extended">
+	<div id="bottom-extended" role="contentinfo" lang="<?php echo $this->get( 'userlang' ) ?>" dir="<?php echo $this->get( 'dir' ) ?>">
 		<div id="bottom-container">
 			<p>
 				<?php
@@ -268,7 +268,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	 */
 	private function toolbox() {
 ?>
-							<li id="p-toolbox" class="widget">
+							<li id="p-toolbox" class="widget" role="navigation">
 								<h2 class="widgettitle"><?php $this->msg( 'toolbox' ) ?></h2>
 								<ul>
 <?php
@@ -284,7 +284,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	private function languageBox() {
 		if ( $this->data['language_urls'] ) {
 ?>
-							<li class="widget" id="p-languages">
+							<li class="widget" id="p-languages" role="navigation">
 								<h2 class="widget-title"<?php $this->html( 'userlangattributes' ) ?>><?php $this->msg( 'otherlanguages' ) ?></h2>
 								<ul>
 <?php
