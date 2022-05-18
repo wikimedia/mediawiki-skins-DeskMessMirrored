@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Huñvreüs"
 		]
 	},
+	"deskmessmirrored-jump-to-navigation": "Mont d’ar merdeerezh",
+	"deskmessmirrored-jump-to-search": "Mont d’ar c’hlask",
 	"deskmessmirrored-navigation": "* Expresso\n\n** Live 2\n\n*** Live 3\n\n* Kafe\n\n** Live 2\n\n*** Live 3\n\n* Te\n\n** Live 2\n\n*** Live 3\n\n* Kouignoù\n\n** Live 2\n\n*** Live 3\n\n* Kouignoù\n\n** Live 2\n\n*** Live 3"
 }
