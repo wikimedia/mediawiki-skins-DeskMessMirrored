@@ -25,7 +25,6 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	public function execute() {
 		global $wgSitename;
 
-		$this->html( 'headelement' );
 ?><div id="mainwrap">
 	<div id="header-container">
 		<div id="header"><!-- header -->
@@ -187,9 +186,6 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	</div><!-- #bottom-extended -->
 </div><!-- #mainwrap -->
 <?php
-		$this->printTrail();
-		echo Html::closeElement( 'body' );
-		echo Html::closeElement( 'html' );
 	} // end of execute() method
 
 	/*************************************************************************************************/

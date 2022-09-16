@@ -11,17 +11,22 @@
 	"license-name": "GPL-2.0-only",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.35.0"
+		"MediaWiki": ">= 1.39.0"
 	},
 	"ValidSkinNames": {
 		"deskmessmirrored": {
 			"displayname": "DeskMessMirrored",
-			"class": "SkinDeskMessMirrored",
+			"class": "SkinTemplate",
 			"args": [ {
 				"name": "deskmessmirrored",
+				"template": "DeskMessMirroredTemplate",
+				"bodyOnly": true,
+				"bodyClasses": [
+					"home",
+					"blog",
+					"custom-background"
+				],
 				"styles": [
-					"mediawiki.skinning.interface",
-					"mediawiki.skinning.content.externallinks",
 					"skins.deskmessmirrored"
 				]
 			} ]
@@ -33,12 +38,8 @@
 		]
 	},
 	"AutoloadClasses": {
-		"SkinDeskMessMirrored": "includes/SkinDeskMessMirrored.php",
 		"DeskMessMirroredTemplate": "includes/DeskMessMirroredTemplate.php",
 		"DeskMessMirroredSkinNavigationService": "includes/DeskMessMirroredSkinNavigationService.php"
-	},
-	"Hooks": {
-		"OutputPageBodyAttributes": "SkinDeskMessMirrored::onOutputPageBodyAttributes"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
@@ -46,6 +47,20 @@
 	},
 	"ResourceModules": {
 		"skins.deskmessmirrored": {
+			"class": "ResourceLoaderSkinModule",
+			"features": {
+				"content-links": true,
+				"content-links-external": true,
+				"content-media": true,
+				"interface-message-box": true,
+				"interface-category": true,
+				"content-tables": true,
+				"i18n-ordered-lists": true,
+				"i18n-all-lists-margins": true,
+				"i18n-headings": true,
+				"elements": true,
+				"interface": true
+			},
 			"styles": {
 				"css/style.css": {
 					"media": "screen"
