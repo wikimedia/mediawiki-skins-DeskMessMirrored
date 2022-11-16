@@ -4,6 +4,7 @@
 		"declaration-property-value-disallowed-list": null,
 		"no-descending-specificity": null,
 		"selector-max-id": null,
-		"declaration-property-unit-disallowed-list": null
+		"declaration-property-unit-disallowed-list": null,
+		"function-no-unknown": null
 	}
 }
