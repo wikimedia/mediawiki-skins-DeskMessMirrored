@@ -233,8 +233,18 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 									<label class="screen-reader-text" for="searchInput"><?php $this->msg( 'search' ) ?></label>
 									<?php
 										echo $this->makeSearchInput( [ 'id' => 'searchInput' ] );
-										# $fullText = $this->makeSearchButton( 'fulltext', [ 'id' => 'mw-searchButton', 'class' => 'searchButton' ] );
-										$goButton = $this->makeSearchButton( 'go', [ 'id' => 'searchGoButton', 'class' => 'searchButton' ] );
+										/*
+										$fullText = $this->makeSearchButton( 'fulltext', [
+											'id' => 'mw-searchButton',
+											'class' => 'searchButton',
+											'value' => $this->getMsg( 'searchbutton' )->text()
+										] );
+										*/
+										$goButton = $this->makeSearchButton( 'go', [
+											'id' => 'searchGoButton',
+											'class' => 'searchButton',
+											'value' => $this->getMsg( 'searcharticle' )->text()
+										] );
 										// Fulltext search button removed, it looks bad together w/ the
 										// "Go" button since they both just don't fit in there
 										# echo $fullText . "\n";
