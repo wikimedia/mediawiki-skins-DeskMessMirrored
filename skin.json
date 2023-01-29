@@ -70,6 +70,9 @@
 				},
 				"css/reset.css": {
 					"media": "screen"
+				},
+				"css/print.css": {
+					"media": "print"
 				}
 			}
 		}
