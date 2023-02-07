@@ -92,7 +92,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 	<div id="maintop"></div>
 	<div id="wrapper">
 		<div id="content" role="main">
-			<div id="main-blog" class="mw-body-content">
+			<div id="main-blog" class="mw-body-content" data-mw-ve-target-container>
 				<div class="post hentry mw-body-primary">
 					<?php
 					$this->cactions();
