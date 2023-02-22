@@ -31,7 +31,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 			<div id="headerleft"></div>
 			<div id="logo" role="banner">
 				<h2 id="site-title">
-					<a href="<?php echo $this->data['nav_urls']['mainpage']['href'] ?>" title="<?php echo Linker::titleAttrib( 'p-logo', 'withaccess' ) ?>" accesskey="<?php echo Linker::accesskey( 'p-logo' ) ?>"><?php echo $wgSitename ?></a>
+					<a href="<?php echo $this->data['nav_urls']['mainpage']['href'] ?>" title="<?php echo htmlspecialchars( Linker::titleAttrib( 'p-logo', 'withaccess' ), ENT_QUOTES ) ?>" accesskey="<?php echo htmlspecialchars( Linker::accesskey( 'p-logo' ), ENT_QUOTES ) ?>"><?php echo $wgSitename ?></a>
 				</h2>
 				<p id="site-description"><?php $this->msg( 'tagline' ) ?></p>
 			</div><!-- #logo -->
