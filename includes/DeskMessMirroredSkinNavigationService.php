@@ -9,6 +9,9 @@ use MediaWiki\MediaWikiServices;
  */
 class DeskMessMirroredSkinNavigationService {
 
+	/** @var bool Is the message we're supposed to parse in the wiki's content language (true) or not? */
+	public $forContent;
+
 	private const VERSION = '0.01';
 
 	/**
@@ -45,7 +48,10 @@ class DeskMessMirroredSkinNavigationService {
 			$nodes = $this->parseLines( $lines, $maxChildrenAtLevel );
 
 			if ( $useCache || $this->forContent ) {
+				// Phan *really* has a thing for $cacheKey below, eh
+				// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 				$cache->set( $cacheKey, $nodes, $duration );
+				// @phan-suppress-previous-line PhanTypeMismatchArgumentNullable
 			}
 		}
 
@@ -81,6 +87,7 @@ class DeskMessMirroredSkinNavigationService {
 					if ( $depth == $lastDepth + 1 ) {
 						$parentIndex = $i;
 					} elseif ( $depth == $lastDepth ) {
+						// @phan-suppress-next-line PhanTypeInvalidDimOffset
 						$parentIndex = $nodes[$i]['parentIndex'];
 					} else {
 						for ( $x = $i; $x >= 0; $x-- ) {
@@ -88,6 +95,7 @@ class DeskMessMirroredSkinNavigationService {
 								$parentIndex = 0;
 								break;
 							}
+							// @phan-suppress-next-line PhanTypeInvalidDimOffset
 							if ( $nodes[$x]['depth'] <= $depth - 1 ) {
 								$parentIndex = $x;
 								break;
@@ -96,7 +104,9 @@ class DeskMessMirroredSkinNavigationService {
 					}
 
 					if ( isset( $maxChildrenAtLevel[$depth - 1] ) ) {
+						// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 						if ( isset( $nodes[$parentIndex]['children'] ) ) {
+							// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 							if ( count( $nodes[$parentIndex]['children'] ) >= $maxChildrenAtLevel[$depth - 1] ) {
 								$lastSkip = $depth;
 								continue;
@@ -105,6 +115,7 @@ class DeskMessMirroredSkinNavigationService {
 					}
 
 					$node = $this->parseOneLine( $line );
+					// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 					$node['parentIndex'] = $parentIndex;
 					$node['depth'] = $depth;
 
@@ -164,7 +175,6 @@ class DeskMessMirroredSkinNavigationService {
 		}
 
 		return [
-			'original' => $lineArr[0],
 			'text' => $text,
 			'href' => $href
 		];

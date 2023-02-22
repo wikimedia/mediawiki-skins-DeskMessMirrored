@@ -39,7 +39,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 			<div id="top-navigation-menu" class="noprint">
 				<ul class="nav-menu">
 				<?php
-					// Yet another copy of NavigationService until NestedMenuParser makes it into core MW...
+					// Yet another copy of NavigationService...
 					$service = new DeskMessMirroredSkinNavigationService();
 					$menuNodes = $service->parseMessage(
 						'deskmessmirrored-navigation',
@@ -53,21 +53,45 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 							$hasChildren = isset( $menuNodes[$level0]['children'] );
 					?>
 					<li class="page_item<?php echo ( $hasChildren ? ' page_item_has_children' : '' ) ?>">
-						<a class="nav<?php echo $counter ?>_link" href="<?php echo htmlspecialchars( $menuNodes[$level0]['href'], ENT_QUOTES ) ?>"><?php echo htmlspecialchars( $menuNodes[$level0]['text'], ENT_QUOTES ) ?></a>
+						<a class="nav<?php echo $counter ?>_link" href="<?php echo htmlspecialchars( $menuNodes[$level0]['href'], ENT_QUOTES ) ?>">
+							<?php
+								// @note The suppression might be incorrect, (though I doubt it), but regardless of
+								// its presence or absence, phan still complains; so pick your poison,
+								// I guess.
+								// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+								echo htmlspecialchars( $menuNodes[$level0]['text'], ENT_QUOTES )
+							?>
+						</a>
 						<?php if ( $hasChildren ) { ?>
 						<ul class="children">
 <?php
 							foreach ( $menuNodes[$level0]['children'] as $level1 ) {
 ?>
 							<li class="page_item">
-								<a href="<?php echo htmlspecialchars( $menuNodes[$level1]['href'], ENT_QUOTES ) ?>"><?php echo htmlspecialchars( $menuNodes[$level1]['text'], ENT_QUOTES ) ?></a>
+								<a href="<?php echo htmlspecialchars( $menuNodes[$level1]['href'], ENT_QUOTES ) ?>">
+									<?php
+										// @note The suppression might be incorrect, (though I doubt it), but regardless of
+										// its presence or absence, phan still complains; so pick your poison,
+										// I guess.
+										// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+										echo htmlspecialchars( $menuNodes[$level1]['text'], ENT_QUOTES )
+									?>
+								</a>
 <?php
 								if ( isset( $menuNodes[$level1]['children'] ) ) {
 									echo '<ul class="children">';
 									foreach ( $menuNodes[$level1]['children'] as $level2 ) {
 ?>
 									<li class="page_item">
-										<a href="<?php echo htmlspecialchars( $menuNodes[$level2]['href'], ENT_QUOTES ) ?>"><?php echo htmlspecialchars( $menuNodes[$level2]['text'], ENT_QUOTES ) ?></a>
+										<a href="<?php echo htmlspecialchars( $menuNodes[$level2]['href'], ENT_QUOTES ) ?>">
+											<?php
+												// @note The suppression might be incorrect, (though I doubt it), but regardless of
+												// its presence or absence, phan still complains; so pick your poison,
+												// I guess.
+												// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+												echo htmlspecialchars( $menuNodes[$level2]['text'], ENT_QUOTES )
+											?>
+										</a>
 									</li>
 <?php
 									}
