@@ -156,7 +156,6 @@ address {
 blockquote {
 	clear: both;
 	color: #606060;
-	/* @embed */
 	background: url( ../images/quotes.png ) no-repeat left 2px;
 	font-style: italic;
 	margin: 10px 35px 0 5px;
@@ -258,7 +257,6 @@ h6 {
 
 .hr,
 .desk-mess-mirrored {
-	/* @embed */
 	background: url( ../images/hr-img.png );
 	background-size: 100% auto;
 	border: none;
@@ -286,7 +284,6 @@ p {
 
 /* Use for "Code" text styling */
 pre {
-	/* @embed */
 	background-image: url( ../images/pre-bg.png );
 	border: 1px inset;
 	font-style: italic;
@@ -299,7 +296,6 @@ pre {
 }
 
 pre code {
-	/* @embed */
 	background-image: url( ../images/pre-bg.png );
 }
 
@@ -437,7 +433,6 @@ div#top-navigation-menu {
 }
 
 .nav-menu li {
-	/* @embed */
 	background: transparent url( ../images/menu_button.png ) top left no-repeat;
 	float: left;
 	height: 61px;
@@ -507,7 +502,6 @@ ul.nav-menu ul {
 }
 
 ul.nav-menu ul li {
-	/* @embed */
 	background: transparent url( ../images/menu_button.png ) repeat scroll 0 0;
 	float: none;
 }
@@ -550,7 +544,6 @@ ul.nav-menu ul.children li {
 }
 
 #maintop {
-	/* @embed */
 	background: url( ../images/main-page-top.png );
 	height: 113px;
 	margin: 0 auto;
@@ -704,7 +697,6 @@ p#wp-link-pages {
 }
 
 .post-comments {
-	/* @embed */
 	background: url( ../images/commentbck.png ) no-repeat;
 	float: right;
 	font-size: 130%;
@@ -731,7 +723,6 @@ p#wp-link-pages {
 }
 
 .rss {
-	/* @embed */
 	background: url( ../images/rssicon.png ) no-repeat 0 50%;
 	padding-left: 20px;
 	padding-top: 1px;
@@ -1103,7 +1094,6 @@ a#cancel-comment-reply-link {
 /* - Author Classes - */
 .administrator-prime,
 .user-id-1 {
-	/* @embed */
 	background: #e5dfcf url( ../images/bns-author.png );
 	border: 1px solid #7e7d75;
 	margin-top: 1px;
@@ -1111,7 +1101,6 @@ a#cancel-comment-reply-link {
 
 .jellybeen,
 .user-id-2 {
-	/* @embed */
 	background: #e5dfcf url( ../images/jb-author.png ) center; /* Rainbow */
 	border: 1px solid #7e7d75;
 	margin-top: 1px;
@@ -1163,7 +1152,6 @@ a.comment-reply-link {
 }
 
 #comments {
-	/* @embed */
 	background: url( ../images/comment-h3.png ) no-repeat;
 	color: #271b03;
 	font-size: 143%;
@@ -1181,7 +1169,6 @@ h4#comments {
 }
 
 #respond {
-	/* @embed */
 	background: url( ../images/comment-h3.png ) no-repeat;
 	color: #271b03;
 	clear: both;
@@ -1316,14 +1303,12 @@ p.form-allowed-tags {
 }
 
 #sidebar-top {
-	/* @embed */
 	background: url( ../images/sidebartop1.png ) no-repeat;
 	height: 90px;
 	min-height: 90px;
 }
 
 #sidebar-content {
-	/* @embed */
 	background: url( ../images/sidebarmid1.png ) repeat-y;
 	font-size: 90%;
 	padding: 9px 30px 30px 30px;
@@ -1370,7 +1355,6 @@ label.screen-reader-text {
 }
 
 li#search.widget {
-	/* @embed */
 	background: url( ../images/searchbck.png ) no-repeat scroll 0 5px transparent;
 }
 
@@ -1402,7 +1386,6 @@ input.search-submit {
 }
 
 .widget {
-	/* @embed */
 	background: url( ../images/widgetbck.png ) repeat-y;
 	border-bottom: 1px solid #e3dccb;
 	margin: 10px 0 20px 4px;
@@ -1411,7 +1394,6 @@ input.search-submit {
 }
 
 .widget h2 {
-	/* @embed */
 	background: url( ../images/widgeth2.png ) no-repeat;
 	color: #4a4131;
 	height: auto;
@@ -1438,14 +1420,12 @@ input.search-submit {
 }
 
 .widget ul li {
-	/* @embed */
 	background: url( ../images/listseparator.png ) no-repeat 25% 100%;
 	margin: 0;
 	padding: 5px 15px 10px 15px;
 }
 
 .widget ol li {
-	/* @embed */
 	background: url( ../images/listseparator.png ) no-repeat 25% 100%;
 	margin: 0;
 	padding: 5px 15px 10px 15px;
@@ -1514,7 +1494,6 @@ input.search-submit {
 }
 
 #sidebar-bottom {
-	/* @embed */
 	background: url( ../images/sidebarbottom1.png ) no-repeat;
 	height: 37px;
 	margin-left: -1px;
