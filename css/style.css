@@ -63,7 +63,7 @@ li.widget_rss ul li cite {
 	font-style: italic;
 }
 
-li.widget_rss ul li cite:before {
+li.widget_rss ul li cite::before {
 	content: '~ ';
 }
 
@@ -170,12 +170,12 @@ blockquote cite {
 	font-style: italic;
 }
 
-blockquote cite:after {
+blockquote cite::after {
 	content: ' ~';
 	font-weight: bold;
 }
 
-blockquote cite:before {
+blockquote cite::before {
 	content: '~ ';
 	font-weight: bold;
 }
@@ -299,8 +299,8 @@ pre code {
 	background-image: url( ../images/pre-bg.png );
 }
 
-q:before,
-q:after {
+q::before,
+q::after {
 	content: '"';
 }
 
