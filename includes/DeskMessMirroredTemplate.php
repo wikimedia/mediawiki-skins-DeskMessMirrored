@@ -11,6 +11,8 @@
  * @license GPL-2.0-only
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Main Desk Mess Mirrored skin class.
  * @ingroup Skins
@@ -307,7 +309,7 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 		}
 		// Avoid PHP 7.1 warning of passing $this by reference
 		$template = $this;
-		Hooks::run( 'SkinTemplateToolboxEnd', [ &$template, true ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'SkinTemplateToolboxEnd', [ &$template, true ] );
 		echo '</ul>';
 	} // toolbox()
 
