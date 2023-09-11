@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
+	"deskmessmirrored-skin-desc": "Escritorio de mármore cuberto cunha mestura de elementos antigos e novos, como algúns papeis vintage, un bolígrafo de aceiro inoxidable e unha cunca de café quente!",
+	"deskmessmirrored-jump-to-navigation": "Saltar á navegación",
+	"deskmessmirrored-jump-to-search": "Saltar á procura",
 	"deskmessmirrored-navigation": "* Expresso\n\n** Nivel 2\n\n*** Nivel 3\n\n* Café\n\n** Nivel 2\n\n*** Nivel 3\n\n* Té\n\n** Nivel 2\n\n*** Nivel 3\n\n* Tortas\n\n** Nivel 2\n\n*** Nivel 3\n\n* Galletas\n\n** Nivel 2\n\n*** Nivel 3"
 }
