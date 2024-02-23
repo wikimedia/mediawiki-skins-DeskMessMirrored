@@ -1051,8 +1051,7 @@ ul.children li.cat-item {
 	font: 100%;
 	margin-top: 3px;
 	padding: 5px;
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow: hidden auto;
 	border-radius: 5px;
 }
 
