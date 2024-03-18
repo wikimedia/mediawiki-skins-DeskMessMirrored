@@ -49,67 +49,67 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 						60 * 60 * 3 // 3 hours
 					);
 
-					if ( is_array( $menuNodes ) && isset( $menuNodes[0] ) ) {
-						$counter = 0;
-						foreach ( $menuNodes[0]['children'] as $level0 ) {
-							$hasChildren = isset( $menuNodes[$level0]['children'] );
+				if ( is_array( $menuNodes ) && isset( $menuNodes[0] ) ) {
+					$counter = 0;
+					foreach ( $menuNodes[0]['children'] as $level0 ) {
+						$hasChildren = isset( $menuNodes[$level0]['children'] );
 					?>
 					<li class="page_item<?php echo ( $hasChildren ? ' page_item_has_children' : '' ) ?>">
 						<a class="nav<?php echo $counter ?>_link" href="<?php echo htmlspecialchars( $menuNodes[$level0]['href'], ENT_QUOTES ) ?>">
-							<?php
-								// @note The suppression might be incorrect, (though I doubt it), but regardless of
-								// its presence or absence, phan still complains; so pick your poison,
-								// I guess.
-								// @phan-suppress-next-line SecurityCheck-DoubleEscaped
-								echo htmlspecialchars( $menuNodes[$level0]['text'], ENT_QUOTES )
-							?>
+						<?php
+							// @note The suppression might be incorrect, (though I doubt it), but regardless of
+							// its presence or absence, phan still complains; so pick your poison,
+							// I guess.
+							// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+							echo htmlspecialchars( $menuNodes[$level0]['text'], ENT_QUOTES )
+						?>
 						</a>
 						<?php if ( $hasChildren ) { ?>
 						<ul class="children">
 <?php
-							foreach ( $menuNodes[$level0]['children'] as $level1 ) {
+foreach ( $menuNodes[$level0]['children'] as $level1 ) {
 ?>
 							<li class="page_item">
 								<a href="<?php echo htmlspecialchars( $menuNodes[$level1]['href'], ENT_QUOTES ) ?>">
-									<?php
-										// @note The suppression might be incorrect, (though I doubt it), but regardless of
-										// its presence or absence, phan still complains; so pick your poison,
-										// I guess.
-										// @phan-suppress-next-line SecurityCheck-DoubleEscaped
-										echo htmlspecialchars( $menuNodes[$level1]['text'], ENT_QUOTES )
-									?>
+		<?php
+			// @note The suppression might be incorrect, (though I doubt it), but regardless of
+			// its presence or absence, phan still complains; so pick your poison,
+			// I guess.
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+			echo htmlspecialchars( $menuNodes[$level1]['text'], ENT_QUOTES )
+		?>
 								</a>
 <?php
-								if ( isset( $menuNodes[$level1]['children'] ) ) {
-									echo '<ul class="children">';
-									foreach ( $menuNodes[$level1]['children'] as $level2 ) {
+if ( isset( $menuNodes[$level1]['children'] ) ) {
+							echo '<ul class="children">';
+	foreach ( $menuNodes[$level1]['children'] as $level2 ) {
 ?>
 									<li class="page_item">
 										<a href="<?php echo htmlspecialchars( $menuNodes[$level2]['href'], ENT_QUOTES ) ?>">
-											<?php
-												// @note The suppression might be incorrect, (though I doubt it), but regardless of
-												// its presence or absence, phan still complains; so pick your poison,
-												// I guess.
-												// @phan-suppress-next-line SecurityCheck-DoubleEscaped
-												echo htmlspecialchars( $menuNodes[$level2]['text'], ENT_QUOTES )
-											?>
+<?php
+// @note The suppression might be incorrect, (though I doubt it), but regardless of
+// its presence or absence, phan still complains; so pick your poison,
+// I guess.
+// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+echo htmlspecialchars( $menuNodes[$level2]['text'], ENT_QUOTES )
+?>
 										</a>
 									</li>
 <?php
-									}
-									echo '</ul>';
-									$counter++;
-								}
+	}
+							echo '</ul>';
+							$counter++;
+}
 ?>
 							</li>
 <?php
-							}
+}
 							echo '</ul>';
 							$counter++;
 						} // hasChildren
 						echo '</li>';
-						} // top-level foreach
-					} // is_array( $menuNodes )
+					} // top-level foreach
+				} // is_array( $menuNodes )
 ?>
 				</ul>
 			</div>
@@ -173,9 +173,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 								<h2 class="widgettitle"><?php $this->msg( 'personaltools' ) ?></h2>
 								<ul>
 								<?php
-									foreach ( $this->getPersonalTools() as $key => $item ) {
-										echo $this->makeListItem( $key, $item );
-									}
+								foreach ( $this->getPersonalTools() as $key => $item ) {
+									echo $this->makeListItem( $key, $item );
+								}
 								?>
 								</ul>
 							</li>
@@ -201,11 +201,11 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 				?><span id="dmm-theme-version" class="noprint"><?php
 				$validFooterIcons = $this->get( 'footericons' );
 				unset( $validFooterIcons['copyright'] );
-				foreach ( $validFooterIcons as $blockName => $footerIcons ) {
-					foreach ( $footerIcons as $icon ) {
-						echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' );
-					}
-				}
+foreach ( $validFooterIcons as $blockName => $footerIcons ) {
+	foreach ( $footerIcons as $icon ) {
+		echo $this->getSkin()->makeFooterIcon( $icon, 'withoutImage' );
+	}
+}
 				?></span>
 			</p>
 		</div><!-- #bottom-container -->
@@ -289,9 +289,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 ?>
 								<div id="p-cactions" class="noprint">
 <?php
-		foreach ( $this->data['content_actions'] as $key => $tab ) {
-			echo $this->makeListItem( $key, $tab );
-		}
+foreach ( $this->data['content_actions'] as $key => $tab ) {
+	echo $this->makeListItem( $key, $tab );
+}
 		echo '</div>';
 	}
 
@@ -304,9 +304,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 								<h2 class="widgettitle"><?php $this->msg( 'toolbox' ) ?></h2>
 								<ul>
 <?php
-		foreach ( $this->data['sidebar']['TOOLBOX'] as $key => $tbitem ) {
-			echo $this->makeListItem( $key, $tbitem );
-		}
+foreach ( $this->data['sidebar']['TOOLBOX'] as $key => $tbitem ) {
+	echo $this->makeListItem( $key, $tbitem );
+}
 		// Avoid PHP 7.1 warning of passing $this by reference
 		$template = $this;
 		MediaWikiServices::getInstance()->getHookContainer()->run( 'SkinTemplateToolboxEnd', [ &$template, true ] );
@@ -320,9 +320,9 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 								<h2 class="widget-title"<?php $this->html( 'userlangattributes' ) ?>><?php $this->msg( 'otherlanguages' ) ?></h2>
 								<ul>
 <?php
-			foreach ( $this->data['language_urls'] as $key => $langLink ) {
-				echo $this->makeListItem( $key, $langLink );
-			} // foreach
+foreach ( $this->data['language_urls'] as $key => $langLink ) {
+	echo $this->makeListItem( $key, $langLink );
+} // foreach
 			echo '</ul>';
 		} // if
 	} // languageBox()
@@ -342,27 +342,27 @@ class DeskMessMirroredTemplate extends BaseTemplate {
 ?>
 		<h2 class="widget-title"><?php echo htmlspecialchars( $msg->exists() ? $msg->text() : $bar ); ?></h2>
 <?php
-		if ( is_array( $cont ) ) {
-			echo '<ul>';
-			foreach ( $cont as $key => $val ) {
-				echo $this->makeListItem( $key, $val );
-			}
-			echo '</ul>';
-		} else {
-			// allow raw HTML block to be defined by extensions (such as NewsBox)
-			echo $cont;
-		}
+if ( is_array( $cont ) ) {
+	echo '<ul>';
+	foreach ( $cont as $key => $val ) {
+		echo $this->makeListItem( $key, $val );
+	}
+	echo '</ul>';
+} else {
+	// allow raw HTML block to be defined by extensions (such as NewsBox)
+	echo $cont;
+}
 		echo '</li>';
 
 		// Need this nonsense to support NewsBox in MW 1.39+ using the new hooks (urgh)
 		$content = $this->getSkin()->getAfterPortlet( $bar );
-		if ( $content !== '' ) {
-			echo Html::rawElement(
-				'div',
-				[ 'class' => [ 'after-portlet', 'after-portlet-' . $bar ] ],
-				$content
-			);
-		}
+if ( $content !== '' ) {
+	echo Html::rawElement(
+		'div',
+		[ 'class' => [ 'after-portlet', 'after-portlet-' . $bar ] ],
+		$content
+	);
+}
 	} // customBox()
 
 }
