@@ -1,26 +1,26 @@
 body,
- div,
- dl,
- dt,
- dd,
- ul,
- ol,
- li,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- pre,
- form,
- fieldset,
- input,
- textarea,
- p,
- blockquote,
- th,
- td {
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
 	margin: 0;
 	padding: 0;
 }
@@ -31,49 +31,49 @@ table {
 }
 
 fieldset,
- img {
+img {
 	border: 0;
 }
 
 address,
- caption,
- cite,
- code,
- dfn,
- em,
- strong,
- th,
- var {
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
 	font-style: normal;
 	font-weight: normal;
 }
 
 ol,
- ul {
+ul {
 	list-style: none;
 }
 
 caption,
- th {
+th {
 	text-align: left;
 }
 
 h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-size: 100%;
 	font-weight: normal;
 }
 
 q::before,
- q::after {
+q::after {
 	content: '';
 }
 
 abbr,
- acronym {
+acronym {
 	border: 0;
 }
