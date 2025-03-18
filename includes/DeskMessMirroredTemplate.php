@@ -11,6 +11,8 @@
  * @license GPL-2.0-only
  */
 
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 
 /**
