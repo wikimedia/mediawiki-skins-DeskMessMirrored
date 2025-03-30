@@ -158,7 +158,8 @@ class DeskMessMirroredSkinNavigationService {
 			$link = $lineArr[0];
 		}
 
-		if ( preg_match( '/^(?:' . wfUrlProtocols() . ')/', $link ) ) {
+		$urlProtocols = MediaWikiServices::getInstance()->getUrlUtils()->validProtocols();
+		if ( preg_match( '/^(?:' . $urlProtocols . ')/', $link ) ) {
 			$href = $link;
 		} else {
 			if ( $link ) {
