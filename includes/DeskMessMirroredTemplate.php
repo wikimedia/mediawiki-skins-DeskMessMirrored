@@ -254,7 +254,7 @@ foreach ( $validFooterIcons as $blockName => $footerIcons ) {
 	 */
 	private function searchBox() {
 ?>
-							<li id="search-3" class="widget widget_search"><h2 class="widgettitle"><?php echo $this->msg( 'search' ) ?></h2>
+							<li id="search-3" class="widget widget_search"><h2 class="widgettitle"><?php $this->msg( 'search' ) ?></h2>
 							<form role="search" method="get" id="searchform" class="searchform" action="<?php $this->text( 'wgScript' ) ?>">
 								<div>
 									<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
