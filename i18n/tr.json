@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"HakanIST"
 		]
 	},
+	"deskmessmirrored-prefs-talkpage": "[[mw:Skin talk:DeskMessMirrored|{{int:talk}}]]",
 	"deskmessmirrored-skin-desc": "Mermer masaüstü bazı eski kağıtlar, paslanmaz çelik kalem ve sıcak bir fincan kahve gibi eski ve yeni öğelerin bir karışımı ile kaplı!",
 	"deskmessmirrored-jump-to-navigation": "Gezinti kısmına atla",
 	"deskmessmirrored-jump-to-search": "Arama kısmına atla",
